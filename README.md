@@ -1,32 +1,99 @@
-#Resume must be in NLP(Natural Language Processing) Format#
+# NLP Resume Parser
 
-this was tested in VS code using Live server extention so first download it and 
-keep Live server setting to this- 
-uncheck first this-
-Live Server - Settings: Wait
-Live Server - Settings: Full Reload
-Live Server - Settings: Auto Save
-and keep
-liveServer.settings.wait to 999999 to avoid reloading page after parse
+A lightweight **resume parser using NLP-friendly PDF/Docx formats** that extracts structured data from resumes, designed to run locally with Flask and display results directly in the browser.
 
--run app.py
--upload pdf 
- limition in this code is it doesnot extract Name from any Resume due to limitation of Keywords
-it requires NLP(Natural Language Processing) resume type where text is in editable form.
-separate script.js file is been made to display it on same site or go to http://127.0.0.1:5000 
-if your using Live server extention, debugged PIN
- to access is given in terminal of app.py file 
+---
 
-*PYTHON LIB REQUIRED*
-pip install flask
-pip install flask-cors
-pip install pdfplumber
-pip install python-docx
+## Features
 
-*r requirement 
+✅ Upload resumes in **NLP-friendly (editable text) PDF/Docx format**  
+✅ Parses and extracts structured information from resumes  
+✅ Displays extracted data on the same webpage for quick review  
+✅ Shows full extracted text via a button for manual verification  
+✅ Separate `script.js` for clean frontend integration
+
+---
+
+## Limitations
+
+🚫 **Name extraction does not work reliably** due to keyword limitations.  
+🚫 Requires resumes in **editable NLP-friendly format** (not scanned images).  
+✅ You can modify/add keywords for better extraction in future enhancements.
+
+---
+
+## Setup
+
+### 1️⃣ Clone the repository
+
+\`\`\`bash
+git clone <your-repo-url>
+cd <repo-folder>
+\`\`\`
+
+### 2️⃣ Install dependencies
+
+#### Using \`requirements.txt\`:
+
+\`\`\`bash
 pip install -r requirements.txt
- 
-change or add keyword if required for future 
-and there is a button where full extracted text is shown
+\`\`\`
 
---Harsh Pawar
+#### Or individually:
+
+\`\`\`bash
+pip install flask,
+pip install flask-cors,
+pip install pdfplumber,
+pip install python-docx,
+\`\`\`
+
+---
+
+## VS Code Live Server Configuration (Optional)
+
+If using **Live Server extension in VS Code** for frontend:
+
+- Install **Live Server** extension.
+- Uncheck:
+  - \`Live Server - Settings: Wait\`
+  - \`Live Server - Settings: Full Reload\`
+  - \`Live Server - Settings: Auto Save\`
+- Set:
+  - \`liveServer.settings.wait\` to \`999999\`
+
+This prevents automatic reloads while parsing resumes.
+
+---
+
+## Running the App
+
+### Backend:
+\`\`\`bash
+python app.py
+\`\`\`
+
+Check your terminal for the **debug PIN and access URL**.
+
+### Frontend:
+
+- Open \`index.html\` with Live Server or go to:
+  \`\`\`
+  http://127.0.0.1:5000
+  \`\`\`
+- Upload your resume (PDF/Docx).
+- View parsed output on the same page.
+
+---
+
+## Contributing
+
+✨ Feel free to fork and contribute:
+- Add better keyword matching
+- Improve name extraction
+- Integrate advanced NLP models for deeper parsing
+
+
+## Author
+
+**Harsh Pawar**
