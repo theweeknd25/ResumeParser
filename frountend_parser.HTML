@@ -1,0 +1,227 @@
+<!-- Resume Parser Page using Campusjobs.html Theme, Responsive -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Parser | Campus To Careers</title>
+  <style>
+    :root {
+  --bg-color: #f0f4f8;
+  --text-color: #1f2937;
+  --container-bg: #ffffff;
+  --info-bg: #e0f7fa;
+  --primary: #0097a7;      /* Teal */
+  --primary-dark: #006064; /* Dark Teal */
+  --accent: #00796b;       /* Accent Green */
+}
+* {
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.theme-toggle {
+  display: none; /* removed dark mode toggle */
+}
+.container {
+  background: var(--container-bg);
+  width: 92%;
+  max-width: 950px;
+  display: flex;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin: 30px auto;
+  animation: fadeInUp 0.6s ease-out;
+}
+.container:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+.info-box {
+  flex: 1;
+  background-color: var(--info-bg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.info-box ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.info-box li {
+  margin: 12px 0;
+  font-size: 16px;
+  color: var(--accent);
+}
+.form-box {
+  flex: 1.2;
+  padding: 40px;
+}
+h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+form input[type="file"] {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 2px dashed var(--primary);
+  border-radius: 10px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--container-bg);
+  color: var(--text-color);
+}
+form input[type="file"]:hover {
+  background: rgba(0, 151, 167, 0.05);
+}
+form input:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 151, 167, 0.4);
+}
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.02);
+}
+.results {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+  color: #374151;
+}
+.field {
+  margin-bottom: 0.8rem;
+}
+.field-label {
+  font-weight: 600;
+  color: var(--primary);
+}
+.field-value {
+  color: #374151;
+  margin-left: 0.4rem;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive styles */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    max-width: 95vw;
+  }
+  .info-box, .form-box {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+  .info-box, .form-box {
+    padding: 20px 10px;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .info-icon {
+    font-size: 2.5rem;
+  }
+  .results {
+    padding: 0.8rem;
+  }
+  .field-label, .field-value {
+    font-size: 1rem;
+  }
+}
+
+  </style>
+  <script>
+    window.onload = function () {
+      document.getElementById('themeCheckbox').addEventListener('change', function () {
+        document.body.classList.toggle('dark');
+      });
+    };
+  </script>
+</head>
+<body>
+  <div class="theme-toggle">
+    <label>
+      <div class="toggle-switch">
+        <input type="checkbox" id="themeCheckbox" />
+        <span class="slider"></span>
+      </div>
+    </label>
+  </div>
+  <div class="container">
+    <div class="info-box">
+      <div class="info-icon">📑✨</div>
+<ul>
+  <li>📑 Upload your resume to extract key information</li>
+  <li>✨ Uses AI to parse and summarise your details</li>
+  <li>🔐 Your data remains secure and private</li>
+</ul>
+
+    <div class="form-box">
+      <h2>Resume Parser</h2>
+      <form enctype="multipart/form-data">
+        <input type="file" accept=".pdf,.docx" required />
+        <input type="submit" value="Parse Resume" class="submit-btn"/>
+      </form>
+      <div class="results">
+        <div class="field"><span class="field-label">Name:</span><span class="field-value">[Extracted Name]</span></div>
+        <div class="field"><span class="field-label">Emails:</span><span class="field-value">[Extracted Emails]</span></div>
+        <div class="field"><span class="field-label">Phones:</span><span class="field-value">[Extracted Phones]</span></div>
+        <div class="field"><span class="field-label">URLs:</span><span class="field-value">[Extracted URLs]</span></div>
+        <div class="field"><span class="field-label">Locations:</span><span class="field-value">[Extracted Locations]</span></div>
+        <div class="field"><span class="field-label">Skills:</span><span class="field-value">[Extracted Skills]</span></div>
+        <div class="field"><span class="field-label">Qualifications:</span><span class="field-value">[Extracted Qualifications]</span></div>
+        <div class="field"><span class="field-label">Years of Experience:</span><span class="field-value">[Extracted Years]</span></div>
+      </div>
+    </div>
+  </div>
+<script src="/script.js"></script>
+
+
+</body>
+</html> 
